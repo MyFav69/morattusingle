@@ -1,0 +1,204 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body{
+        background-color: black;
+      }
+      .card{
+        background-color: black;
+        display: flex;
+      }
+      .userLabel{
+        flex: 80%;
+        color: #FFFF00;
+      }
+      .menu{
+        flex: 20%;
+        color: #8A2BE2;
+      }
+      .title{
+        font-family: cursive;
+        font-size: 4.4vh;
+      }
+      .iconMenu{
+        font-weight: bold;
+        font-size: 4vh;
+      }
+      .subject{
+        font-size: 1vh;
+        font-family: 'Courier New', monospace;
+      }
+      .profile{
+        background-color: black;
+        padding-left: 6vw;
+      }
+      .intro{
+        padding-left: 6vw;
+      }
+      .article{
+        padding-left: 8vw;
+        padding-right: 8vw;
+        color: white;
+      }
+      .buttonspace{
+        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-top: 2vh;
+        display: flex;
+        justify-content: space-around;
+      }
+      .Hello{
+        font-size: 40px;
+        font-family: cursive;
+        font-weight: bold;
+        color: white;
+      }
+      .me{
+        font-size: 30px;
+        font-family: cursive;
+        color: white;
+      }
+      .role{
+        font-size: 50px;
+        font-family: cursive;
+        font-weight: bold;
+        color: white;
+      }
+      .rolecolor{
+        color: #1F51FF;
+      }
+      .gallery{
+        background-color: #98FB98;
+        text-align: center;
+        border-radius: 10px;
+        padding: 8px;
+        width: 30vw;
+        height: 2vh;
+        font-family: cursive;
+        font-weight: bold;
+      }
+      .buttonLab{
+        font-size: 2vh;
+        /*width: 26vw;
+        height: 2vh;*/
+      }
+      .back{
+        background-color: #EE82EE;
+        color: black;
+        text-align: center;
+        border-radius: 10px;
+        padding: 8px;
+        width: 20vw;
+        height: 2vh;
+        font-family: cursive;
+        font-weight: bold;
+      }
+      .contact{
+        background-color: black;
+        padding-left: 6vw;
+      }
+      .phone{
+        font-family: cursive;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+      }
+      .phoneno{
+        padding-left: 4vh;
+        font-family: cursive;
+        font-size: 20px;
+        font-size: 16px;
+        color: white;
+      }
+      .copyright{
+        padding-left: 30%;
+        padding-top: 6vh;
+      }
+      .copytitle{
+        color: grey;
+        font-family: Arial;
+        font-size: ;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="headPage">
+      <div class="userLabel">
+        <h1 class="title">Your Toy</br><span class="subject">babe</span></h1>
+      </div>
+      <div class="menu" onclick="handleMenu()">
+        <h1 class="iconMenu" id="iconMenu">3==&gt;</h1>
+        <!--&#x2630;content://media/external/downloads/1000070261-->
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://myfav69.github.io/morattusingle/DataBase/About/About.jpg" alt="profile" width="300" height="300"/>
+    </div>
+    <div class="intro">
+      <span class="Hello">Holla!</span></br>
+      <span class="me">I'm Isabella</span></br>
+    </div>
+    <div class="intro">
+      <span class="role rolecolor">Big Ass</span><span class="role">bitch</span>
+      </p>
+      <span class="role">&nbsp;</span>
+    </div>
+    <div class="article">
+      <span><i>&ldquo;A successful fitness model and also an entrepreneur clothing designer with the own clothing line named <a target="_blank" style="color: #FF1493; text-decoration: none " href="https://www.brandsandbranches.com/">Bars and Branches</a>. In addition to that, I also a social media personality who currently has millions of followers on Instagram.&rdquo;</i></span>
+    </div>
+    </br>
+    </br>
+    <p>&nbsp;</p></br>
+        <img style="width: 100%" src="https://myfav69.github.io/morattusingle/DataBase/About/cover.jpg" alt="cover"/>
+    <div class="buttonspace">
+      <div class="gallery">
+        <span class="buttonLab">Open Gallery</span>
+      </div>
+      <div class="back" onclick="handleBack()">
+        <span class="buttonLab">Back</span>
+      </div>
+    </div>
+    </br>
+    </br>
+    <p>&nbsp;</p></br>
+    </br>
+      <div class="contact">
+        <span class="phone">Follow Me:</span></br>
+        <span class="phoneno">
+          <i onclick="handleInsta()" class="fa fa-instagram" style="font-size:36px; color: #FF4500"></i>
+        </span>
+      </div>
+      </br>
+      <div class="contact">
+        <span class="phone">Location:</span></br>
+        <span class="phoneno">New York, USA</span>
+      </div>
+     </br>
+     <div class="copyright">
+       <span class="copytitle">&copy; 1984 by Isabella.</span>
+     </div>
+  </body>
+  <script>
+  
+ function handleInsta() {
+   let link = document.createElement('a');
+   link.href = "https://www.instagram.com/missdollycastro/";
+   link.click();
+ }
+ 
+ function handleBack() {
+   let link = document.createElement('a');
+   link.href = "https://myfav69.github.io/morattusingle/#";
+   link.click();
+ }
+ 
+ function handleMenu() {
+   let link = document.createElement('a');
+   link.href = "https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html";
+   link.click();
+ }
+ 
+  </script>
+</html>
