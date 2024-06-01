@@ -1,7 +1,163 @@
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<style>
-</style>
-<body>
-</body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <head>
+    <style>
+      .body{
+        background-color: black;
+      }
+      .selectone{
+        background-color: black;
+        height: 10vh;
+        color: grey;
+        border-radius: 10px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .viewer{
+        position: relative;
+        display: none;
+        user-scalable: 100;
+      }
+      .holder{
+        margin-top: 18px;
+      }
+      .container{
+        background-color: black;
+        height: 74vh;
+        overflow: scroll;
+      }
+      .navigate{
+        background-color: black;
+        height: 6vh;
+        display: flex;
+      }
+      .backbtn{
+        flex: 30%;
+        background-color: red;
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 1vh;
+      }
+      .btnstyle{
+        margin-top: 0.6vh;
+      }
+      .empty{
+        flex: 70%;
+      }
+ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  position: center;
+  width: 45.9%;
+  padding: 5px;
+  display: flex;
+}
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+.column img:hover {
+  opacity: 1;
+}
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: black;
+  font-size: 20px;
+}
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: inherit;
+  font-size: 35px;
+  cursor: pointer;
+}
+    </style>
+  <script>
+    function handleDash (imgs) {
+      var expandImg = document.getElementById("expandedAImg");
+      
+      var imgText = document.getElementById("imgAtext");
+      
+      expandImg.src = imgs.src;
+      
+      imgText.innerHTML = imgs.alt;
+      
+      expandImg.parentElement.style.display = "block";
+      
+      document.getElementById("selectone").style.cssText = 'display: none';
+      
+      document.getElementById("container").style.cssText = 'background-color: black; height: 54.3vh; overflow: scroll;';
+    }
+    
+  function handleLine (imgs) {
+      var expandImg = document.getElementById("expandedAImg");
+      
+      var imgText = document.getElementById("imgAtext");
+      
+      expandImg.src = imgs.src;
+      
+      imgText.innerHTML = imgs.alt;
+      
+      expandImg.parentElement.style.display = "block";
+      
+      document.getElementById("selectone").style.cssText = 'display: none';
+      
+      document.getElementById("container").style.cssText = 'background-color: black; height: 17.3vh; overflow: scroll;';
+    }
+
+    function handleClose() {
+      document.getElementById("selectone").style.cssText = 'background-colo: black; height: 10vh; color: grey; border-radius: 10px; font-size: 30px; display: flex; justify-content: center; text-align: center;';
+      document.getElementById("container").style.cssText = 'background-color: black; height: 74vh; overflow: scroll;';
+      document.getElementById("viewer").style.cssText ='display: none';
+    }
+ 
+ function handleBack() {
+   let link = document.createElement('a');
+   link.href = "https://myfav69.github.io/morattusingle/DataBase/Stars/JessaRhodes/Profile.html";
+   link.click();
+ }
+ 
+    alert("Maker your Screen Brightness 100% & be in Dark Room. For Better View")
+    
+  </script>
+  </head>
+  <body class="body">
+    <div class="selectone" id="selectone">
+      <span class="holder">select one</span>
+    </div>
+    <div class="viewer" id="viewer">
+        <span onclick="handleClose()" class="closebtn">&times;</span>
+      <img id="expandedAImg" style="width:100%">
+      <div id="imgAtext"></div>
+    </div>
+    
+    <!-- container starts here -->
+  
+    <div class="container" id="container">
+
+
+
+    </div>
+    <div class="navigate">
+      <div class="empty">&nbsp;</div>
+      <div class="backbtn" onclick="handleBack()">
+        <span class="btnstyle">Back</span>
+      </div>
+    </div>
+  </body>
 </html>
