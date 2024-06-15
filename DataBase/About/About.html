@@ -121,6 +121,27 @@
         font-family: Arial;
         font-size: ;
       }
+      .password{
+        border: none;
+        height: 30px;
+        border-radius: 8px;
+      }
+      .login{
+        background-color: red;
+        color: white;
+        border: none;
+        text-align: center;
+        height: 25px;
+        border-radius: 10px;
+      }
+      .validation{
+        padding: 63px;
+        display: none;
+      }
+      .btnstyle{
+        padding-top: 8px;
+        padding-left: 34%;
+      }
     </style>
   </head>
   <body>
@@ -153,11 +174,18 @@
     <p>&nbsp;</p></br>
         <img style="width: 100%" src="https://myfav69.github.io/morattusingle/DataBase/About/cover.jpg" alt="cover"/>
     <div class="buttonspace">
-      <div class="gallery">
+      <div class="gallery" onclick="handleLeaked()">
         <span class="buttonLab">Open Gallery</span>
       </div>
       <div class="back" onclick="handleBack()">
-        <span class="buttonLab">Back</span>
+        <span class="buttonLab">LogOut</span>
+      </div>
+    </div>
+    <div class="validation" id="validation">
+      <input class="password" type="password" placeholder="Enter pin" id="password" />
+      <button onclick="handleClose()">X</button>
+      <div class="btnstyle">
+        <button class="login" onclick="handleLogin()">open</button>
       </div>
     </div>
     </br>
@@ -176,7 +204,7 @@
         <span class="phoneno">New York, USA</span>
       </div>
      </br>
-     <div class="copyright">
+     <div id="copyright" class="copyright">
        <span class="copytitle">&copy; 1984 by Isabella.</span>
      </div>
   </body>
@@ -190,7 +218,7 @@
  
  function handleBack() {
    let link = document.createElement('a');
-   link.href = "https://myfav69.github.io/freexxx/#";
+   link.href = "https://myfav69.github.io/morattusingle/#";
    link.click();
  }
  
@@ -200,5 +228,27 @@
    link.click();
  }
  
+ function handleLeaked() {
+   document.getElementById("validation").style.cssText = 'display: block';
+   let link = document.createElement('a');
+   link.href = "#copyright";
+   link.click();
+ }
+ 
+ function handleClose() {
+    document.getElementById("validation").style.cssText = 'display: none';
+ }
+ 
+ function handleLogin() {
+   let pin = 8085;
+   let userPin = document.getElementById("password").value;
+   if(pin == userPin){
+     let link = document.createElement('a');
+     link.href = "https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html";
+     link.click();
+   }else{
+     alert('The entered pin is incorrect!')
+   }
+ }
   </script>
 </html>
