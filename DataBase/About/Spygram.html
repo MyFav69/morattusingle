@@ -1,0 +1,145 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .body{
+        background-color: white;
+      }
+      .apptitle{
+        background-color: white;
+        height: 6vh;
+        color: black;
+        border-radius: 10px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+      }
+      .holder{
+        font-family: cursive;
+      }
+      .container{
+        background-color: white;
+        height: 78vh;
+        overflow: scroll;
+      }
+      .navigate{
+        background-color: white;
+        height: 6vh;
+        display: flex;
+      }
+      .backbtn{
+        flex: 10%;
+        background-color: red;
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 1vh;
+      }
+      .btnstyle{
+        margin-top: 1vh;
+      }
+      .empty{
+        flex: 70%;
+      }
+      .post-lineimg{
+        background-color: white;
+        width: 88vw;
+        height: 60.5vh;
+        border-radius: 20px;
+        margin: 12px;
+        margin-bottom: 6px;
+        box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.75);
+      }
+      .lineimg{
+        width: 62vw;
+        height: 52vh;
+        margin-left: 48px;
+        margin-top: 15px;
+      }
+      .linecaption{
+        font-size: 21px;
+        margin-left: 50px;
+        font-weight: bold;
+        font-family: cursive;
+      }
+      
+ /*--404--*/
+.windowview{
+  height: 50vh;
+  width: 95vw;
+  padding-top: 20vh;
+  display: block;
+}
+.title{
+  padding-left: 28vw;
+  display: block;
+}
+    </style>
+  <script>
+  
+ function handleBack() {
+   let link = document.createElement('a');
+   link.href = "https://myfav69.github.io/morattusingle/DataBase/About/About.html";
+   link.click();
+   sessionStorage.removeItem('pin');
+   sessionStorage.clear();
+ }
+ 
+ function handleValidatio() {
+   
+   let pin = sessionStorage.getItem('pin');
+   
+   if(pin == 8085){
+     document.getElementById("error").style.cssText = 'display: none;';
+     document.getElementById("title").style.cssText = 'display: none;';
+   }else{
+     document.getElementById("apptitle").style.cssText = 'display: none;';
+     document.getElementById("container").style.cssText = 'display: none;';
+     document.getElementById("navigate").style.cssText = 'display: none;';
+     document.getElementById("body").style.cssText = 'background-color: white;';
+   }
+ }
+ 
+ window.onload = handleValidatio;
+    
+  </script>
+  </head>
+  <body class="body" id="body">
+    
+    <img id="error" class="windowview" src="https://myfav69.github.io/maintenance/404.jpg">
+    <span id="title" class="title">Permission Denied!</span>
+
+    <div class="apptitle" id="apptitle">
+      <span class="holder">Spy-Gram</span>
+    </div>
+
+    <!-- container starts here -->
+  
+    <div class="container" id="container">
+  
+    <div class="post-lineimg">
+      <img class="lineimg" src="https://myfav69.github.io/morattusingle/DataBase/About/Spy/post1.gif" alt=""/>
+      <br>
+      <span class="linecaption">Slut sis luv's bhh cock & ri-</span>
+      <span style="color: #1F51FF;" class="linecaption">mming</span>
+    </div>
+
+    </div>
+    <div class="navigate" id="navigate">
+      <div class="empty">&nbsp;</div>
+      <div class="backbtn" onclick="handleBack()">
+        <span class="btnstyle"><i style="font-size:24px" class="fa">&#xf011;</i></span>
+      </div>
+    </div>
+  </body>
+</html>
