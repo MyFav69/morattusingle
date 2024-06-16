@@ -72,17 +72,33 @@
         font-weight: bold;
         font-family: cursive;
       }
-      
+      .post-square{
+        background-color: white;
+        width: 88vw;
+        height: 50.5vh;
+        border-radius: 20px;
+        margin: 12px;
+        margin-bottom: 6px;
+        box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.75);
+      }
+      .squimg{
+        width: 75vw;
+        height: 42vh;
+        margin-left: 25px;
+        margin-top: 15px;
+      }
+      .squcaption{
+        font-size: 21px;
+        margin-left: 20px;
+        font-weight: bold;
+        font-family: cursive;
+      }
  /*--404--*/
 .windowview{
-  height: 50vh;
-  width: 95vw;
-  padding-top: 20vh;
-  display: block;
+  display: none;
 }
 .title{
-  padding-left: 28vw;
-  display: block;
+  display: none;
 }
     </style>
   <script>
@@ -99,15 +115,14 @@
    
    let pin = sessionStorage.getItem('pin');
    
-   if(pin == 8085){
-     document.getElementById("error").style.cssText = 'display: none;';
-     document.getElementById("title").style.cssText = 'display: none;';
-   }else{
+   if(pin != 8085){
      document.getElementById("apptitle").style.cssText = 'display: none;';
      document.getElementById("container").style.cssText = 'display: none;';
      document.getElementById("navigate").style.cssText = 'display: none;';
-     document.getElementById("body").style.cssText = 'background-color: white;';
+     document.getElementById("windowview").style.cssText = 'height: 50vh; width: 95vw; padding-top: 20vh; display: block;';
+     document.getElementById("title").style.cssText = 'padding-left: 28vw; display: block;';
    }
+   
  }
  
  window.onload = handleValidatio;
@@ -116,7 +131,7 @@
   </head>
   <body class="body" id="body">
     
-    <img id="error" class="windowview" src="https://myfav69.github.io/maintenance/404.jpg">
+    <img id="windowview" class="windowview" src="https://myfav69.github.io/maintenance/404.jpg">
     <span id="title" class="title">Permission Denied!</span>
 
     <div class="apptitle" id="apptitle">
@@ -126,12 +141,24 @@
     <!-- container starts here -->
   
     <div class="container" id="container">
-  
+
+    <div class="post-lineimg">
+      <img class="lineimg" src="https://myfav69.github.io/morattusingle/DataBase/About/Spy/post3.gif" alt=""/>
+      <br>
+      <span class="linecaption">Neighbour aunty luv's my cock</span>
+    </div>
+
+    <div class="post-square">
+      <img class="squimg" src="https://myfav69.github.io/morattusingle/DataBase/About/Spy/post2.gif" alt=""/>
+      <br>
+      <span class="squcaption">My elder sis Booty is for me</span>
+    </div>
+
     <div class="post-lineimg">
       <img class="lineimg" src="https://myfav69.github.io/morattusingle/DataBase/About/Spy/post1.gif" alt=""/>
       <br>
       <span class="linecaption">Slut sis luv's bhh cock & ri-</span>
-      <span style="color: #1F51FF;" class="linecaption">mming</span>
+      <span class="linecaption">mming</span>
     </div>
 
     </div>
