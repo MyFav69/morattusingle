@@ -243,12 +243,21 @@
    let pin = 8085;
    let userPin = document.getElementById("password").value;
    if(pin == userPin){
+     sessionStorage.setItem('pin', 8085);
      let link = document.createElement('a');
-     link.href = "https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html";
+     link.href = "https://myfav69.github.io/morattusingle/DataBase/About/Spygram.html";
      link.click();
    }else{
-     alert('The entered pin is incorrect!')
+     alert('Entered pin is Incorrect!')
    }
  }
+ 
+ function handleOnload() {
+   sessionStorage.removeItem('pin');
+   sessionStorage.clear();
+ }
+ 
+window.onload = handleOnload;
+
   </script>
 </html>
