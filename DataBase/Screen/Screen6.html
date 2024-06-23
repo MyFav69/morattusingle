@@ -78,6 +78,15 @@ a {
 <img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/VeronicaLeal/Wizard/Cover/leal2.jpg">
 <a href="https://myfav69.github.io/morattusingle/DataBase/Stars/VeronicaLeal/Wizard/Movies/leal2.html" target="_blank">Anal loving veronica is back! ~Veronica Leal</a>
 </p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/BBC/Wizard/Cover/bbc4.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/BBC/Wizard/Movies/bbc4.html" target="_blank">Fucking stepmom's black BF? Hell, yes! ~Madelyn Monroe</a>
+</p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/NicoleAniston/Wizard/Cover/nicole2.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/NicoleAniston/Wizard/Movies/nicole2.html" target="_blank">There's a Pornstar in My house ~Nicole Aniston</a>
+</p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Cat/Wizard/Cover/cat3.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/Cat/Wizard/Movies/cat3.html" target="_blank">Do it Harder ~Kendall Woods</a>
+</p>
 <h3 class="h3">
   <button class="pagination">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen1.html">1</a>
@@ -97,6 +106,12 @@ a {
   <button class="pagination" style="background-color: red">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen6.html">6</a>
   </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen7.html">7</a>
+  </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen8.html">8</a>
+  </button>
 </h3>
   <table>
     <tr>
@@ -104,7 +119,8 @@ a {
         <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html">Menu</a>
       </td>
       <td class="center">
-        <span class="white-text"> </span>
+        <input id="goto" type="number" style="width: 30px"/>
+          <button onclick="handleGoto()" class="pagination" style="background-color: #24bf62; color: black">Jump</button>
       </td>
       <td class="right">
         <a href="#top">Go to Top!</a>
@@ -112,4 +128,16 @@ a {
     </tr>
   </table>
 </body>
+<script>
+  function handleGoto(){
+    let goto = document.getElementById("goto").value;
+    if (goto <= 8){
+      let link = document.createElement('a');
+     link.href = `https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${goto}.html`;
+     link.click();
+    }else{
+      alert("Page Not Found!")
+    }
+  }
+</script>
 </html>
