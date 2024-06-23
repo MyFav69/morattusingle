@@ -106,6 +106,12 @@ a {
   <button class="pagination">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen6.html">6</a>
   </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen7.html">7</a>
+  </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen8.html">8</a>
+  </button>
 </h3>
   <table>
     <tr>
@@ -113,7 +119,8 @@ a {
         <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html">Menu</a>
       </td>
       <td class="center">
-        <span class="white-text"> </span>
+        <input id="goto" type="number" style="width: 30px"/>
+          <button onclick="handleGoto()" class="pagination" style="background-color: #24bf62; color: black">Jump</button>
       </td>
       <td class="right">
         <a href="#top">Go to Top!</a>
@@ -121,4 +128,16 @@ a {
     </tr>
   </table>
 </body>
+<script>
+  function handleGoto(){
+    let goto = document.getElementById("goto").value;
+    if (goto <= 8){
+      let link = document.createElement('a');
+     link.href = `https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${goto}.html`;
+     link.click();
+    }else{
+      alert("Page Not Found!")
+    }
+  }
+</script>
 </html>
