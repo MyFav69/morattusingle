@@ -56,13 +56,121 @@ a {
 .a{
   color: white;
 }
+.search-btn{
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+.img-size{
+  width: 30px;
+  height: 30px;
+}
+.search-div{
+  display: none;
+}
+.drop-down-div{
+  width: 40vw;
+  height: 25vh;
+  overflow: auto;
+}
+.search-input{
+  border: none;
+  outline: none;
+  margin-top: 8px;
+  height: 20px;
+  width: 160px;
+  color: white;
+  background-color: black;
+}
+.profile-search{
+  width: 80px;
+  height: 40px;
+}
+.profile-btn:hover{
+  background-color: #DC143C;
+  color: white;
+}
+.search-label{
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+}
+.table-container{
+  position: relative;
+  z-index: 0;
+}
+.search-btn-icon{
+  display: flex;
+  align-content: left;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+.menu-title{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-right: 20px;
+  padding-top: 5px;
+  font-size: bold;
+}
 </style>
+<script>
+
+  function handleSearch() {
+    document.getElementById("search-div").style.cssText = 'display: flex; flex-direction: column; position: absolute; z-index: 1; background-color: black; color: white; width: 40vw; height: 25vh; border-radius: 10px; box-shadow: 0 4px 8px black;';
+    document.getElementById("search-btn-icon").style.cssText = 'display: none';
+    document.getElementById("table-container").style.cssText = 'position: relative; z-index: 0; margin-top: 63px';
+  }
+  
+  function handleSearchClose() {
+    document.getElementById("search-div").style.cssText = 'display: none';
+    document.getElementById("search-btn-icon").style.cssText = 'display: flex; align-content: left; justify-content: left;';
+    document.getElementById("table-container").style.cssText = 'position: relative; z-index: 0;';
+  }
+  
+  function getData(filterVal) {
+    const data = [{name: "Search", profile: "https://myfav69.github.io/maintenance/search.png", link: "Search"},{name: "AdultX", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/All.jpg", link: "Screen"},{name: "Angels", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Angels.jpg", link: "Angel"},{name: "Squirt", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Squirt.jpg", link: "Water"},{name: "BBC", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/BBC.jpg", link: "BBC"},{name: "Ebony", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Ebony.jpg", link: "Cat"},{name: "Pervert", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Pervert.jpg", link: "Family"},{name: "Swap", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Swap.jpg", link: "Swap"},{name: "IncestFlix", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Flix.jpg", link: "Flix"}];
+
+  let dropDownList = data.map((details) => {
+    return (`<div onclick="handleOpenProfile('${details.link}')" class="profile-btn" style="display: flex; padding: 10px;">
+    <div><span class="search-label">${details.name}</span></div>
+  </div>`)
+  }).join('');
+  
+  document.getElementById('drop-down-div').innerHTML = dropDownList
+  
+  }
+  
+  window.onload = getData;
+
+  function handleOpenProfile(linkName) {
+    if(linkName != 'Search'){
+      let link = document.createElement('a');
+      link.href = `https://myfav69.github.io/morattusingle/DataBase/${linkName}/${linkName}1.html`;
+      link.click();
+    }else{
+      alert('Comming Soon..!')
+    }
+ }
+  
+</script>
 <body>
 <h1 class="h1" id="top">
   <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html" style="color: white">
     Swap
   </a>
 </h1>
+
+<div id="search-btn-icon" class="search-btn-icon"><button onclick="handleSearch()" class="search-btn"><img class="img-size" src="https://myfav69.github.io/maintenance/menu.png"/></button></div>
+
+<div id="search-div" class="search-div">
+  <div style="display: flex; margin-left: 10px; padding: 5px">
+    <div style="flex: 30%" onclick="handleSearchClose()"><button class="search-btn"><img class="img-size" src="https://myfav69.github.io/maintenance/close.png"/></button></div>
+    <div class="menu-title" style="flex: 70%">Menu</div>
+  </div>
+  <div id="drop-down-div" class="drop-down-div"></div>
+</div>
+
+<div id="table-container" class="table-container">
 <img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/ClaraTrinity/Wizard/Cover/clara1.jpg">
 <a href="https://myfav69.github.io/morattusingle/DataBase/Stars/ClaraTrinity/Wizard/Movies/clara1.html" target="_blank">Lucky Swappers!</a>
 </p>
@@ -78,6 +186,7 @@ a {
 <img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Swap/Wizard/Cover/swap3.jpg">
 <a href="https://myfav69.github.io/morattusingle/DataBase/Swap/Wizard/Movies/swap3.html" target="_blank">Our own private show</a>
 </p>
+</div>
 <h3 class="h3">
   <button class="pagination" style="background-color: red">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Swap/Swap1.html">1</a>
@@ -89,7 +198,8 @@ a {
         <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html">Menu</a>
       </td>
       <td class="center">
-        <span class="white-text"> </span>
+        <input id="goto" type="number" style="width: 30px"/>
+          <button onclick="handleGoto()" class="pagination" style="background-color: #24bf62; color: black">Swap</button>
       </td>
       <td class="right">
         <a href="#top">Go to Top!</a>
@@ -97,4 +207,16 @@ a {
     </tr>
   </table>
 </body>
+<script>
+  function handleGoto(){
+    let goto = document.getElementById("goto").value;
+    if (goto <= 1){
+      let link = document.createElement('a');
+     link.href = `https://myfav69.github.io/morattusingle/DataBase/Swap/Swap${goto}.html`;
+     link.click();
+    }else{
+      alert("Page Not Found!")
+    }
+  }
+</script>
 </html>
