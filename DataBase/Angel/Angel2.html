@@ -56,6 +56,64 @@ a {
   text-align: right;
   color: 000000;
 }
+.search-btn{
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+.img-size{
+  width: 30px;
+  height: 30px;
+}
+.search-div{
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  color: white;
+  width: 60vw;
+  height: 40vh;
+  margin-left: 35vw;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.drop-down-div{
+  width: 60vw;
+  height: 40vh;
+  overflow: auto;
+}
+.search-input{
+  border: none;
+  outline: none;
+  margin-top: 8px;
+  height: 20px;
+  width: 160px;
+  color: white;
+  background-color: black;
+}
+.profile-search{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.profile-btn:hover{
+  background-color: #DC143C;
+  color: white;
+}
+.search-label{
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+}
+.table-container{
+  position: relative;
+  z-index: 0;
+}
+.search-btn-icon{
+  display: flex;
+  align-content: right;
+  justify-content: right;
+}
     td{
       width: 50%;
     }
@@ -65,6 +123,93 @@ animation: blinker 3s linear infinite;
 }
 @keyframes blinker { 50% { opacity: 0; } }
 </style>
+<script>
+
+  function handleSearch() {
+    document.getElementById("search-div").style.cssText = 'display: flex; flex-direction: column; position: absolute; z-index: 1; background-color: black; color: white; width: 60vw; height: 40vh; margin-left: 35vw; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);';
+    document.getElementById("search-btn-icon").style.cssText = 'display: none';
+    document.getElementById("table-container").style.cssText = 'position: relative; z-index: 0; margin-top: 53.2px';
+  }
+  
+  function handleSearchClose() {
+    document.getElementById("search-div").style.cssText = 'display: none';
+    document.getElementById("search-btn-icon").style.cssText = 'display: flex; align-content: right; justify-content: right;';
+    document.getElementById("table-container").style.cssText = 'position: relative; z-index: 0;';
+  }
+  
+  function getData(filterVal) {
+    const data = [{name: "Janice Griffith", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/JaniceGriffith/JaniceGriffith.jpg", link: "JaniceGriffith"},
+{name: "Gianna Dior", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/GiannaDior/GiannaDior.jpg", link: "GiannaDior"},
+{name: "Kimmy Granger", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/KimmyGranger/KimmyGranger.jpg", link: "KimmyGranger"},
+{name: "Lana Rhoades", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/LanaRhoades/LanaRhoades.jpg", link: "LanaRhoades"},
+{name: "Ariana Marie", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/ArianaMarie/ArianaMarie.jpg", link: "ArianaMarie"},
+{name: "Jax Slayher", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/JaxSlayher/JaxSlayher.jpg", link: "JaxSlayher"},
+{name: "Kali Roses", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/KaliRoses/KaliRoses.jpg", link: "KaliRoses"},
+{name: "Jessa Rhodes", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/JessaRhodes/JessaRhodes.jpg", link: "JessaRhodes"},
+{name: "Nicole Aniston ", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/NicoleAniston/NicoleAniston.jpg", link: "NicoleAniston"},
+{name: "Riley Reid", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/RileyReid/RileyReid.jpg", link: "RileyReid"},
+{name: "Clara Trinity", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/ClaraTrinity/ClaraTrinity.jpg", link: "ClaraTrinity"},
+{name: "Veronica Rodrigue", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/VeronicaRodriguez/VeronicaRodriguez.jpg", link: "VeronicaRodriguez"},
+{name: "Emily Willis", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/EmilyWillis/EmilyWillis.jpg", link: "EmilyWillis"},
+{name: "Veronica Leal", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/VeronicaLeal/VeronicaLeal.jpg", link: "VeronicaLeal"},
+{name: "Aria Lee", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/AriaLee/AriaLee.jpg", link: "AriaLee"},
+{name: "Elsa Jean", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/ElsaJean/ElsaJean.jpg", link: "ElsaJean"},
+{name: "Isabella De Santos", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/IsabellaDeSantos/IsabellaDeSantos.jpg", link: "IsabellaDeSantos"},
+{name: "Molly Little", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/MollyLittle/MollyLittle.jpg", link: "MollyLittle"},
+{name: "Desiree Dulce", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/DesireeDulce/DesireeDulce.jpg", link: "DesireeDulce"},
+{name: "Uma Jolie", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/UmaJoile/UmaJoile.jpg", link: "UmaJolie"},
+{name: "Katana Kombat", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/KatanaKombat/KatanaKombat.jpg", link: "KatanaKombat"},
+{name: "Kylie Rocket", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/KylieRocket/KylieRocket.jpg", link: "KylieRocket"},
+{name: "Vina Sky", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/VinaSky/VinaSky.jpg", link: "VinaSky"},
+{name: "Charity Crawford", profile: "https://myfav69.github.io/morattusingle/DataBase/Stars/CharityCrawford/CharityCrawford.jpg", link: "CharityCrawford"}];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+          }
+  }
+  
+    shuffle(data);
+
+  let dropDownList = data.filter((fil) => {
+    if(typeof(filterVal) != 'object'){
+      if(fil.name.toLowerCase().includes(filterVal.toLowerCase())){
+        return fil
+      }
+    }else{
+      return fil
+    }
+  }).map((details) => {
+    return (`<div onclick="handleOpenProfile('${details.link}')" class="profile-btn" style="display: flex; padding: 10px;">
+    <div style="flex: 20%"><img src=${details.profile} class="profile-search"></div>
+    <div style="flex: 80%; margin-top: 8px"><span class="search-label">${details.name}</span></div>
+  </div>`)
+  }).join('');
+  
+  document.getElementById('drop-down-div').innerHTML = dropDownList
+  
+  }
+  
+  window.onload = getData;
+  
+  function handleFilter() {
+    let filterVal = document.getElementById("search-input").value;
+
+    if(filterVal != ''&&typeof(filterVal) != 'Object'){
+      getData(filterVal);
+    }else{
+      getData('');
+    }
+  }
+  
+  function handleOpenProfile(linkName) {
+   let link = document.createElement('a');
+   link.href = `https://myfav69.github.io/morattusingle/DataBase/Stars/${linkName}/Profile.html`;
+   link.click();
+ }
+  
+</script>
 <body>
 <h1 class="h1" id="top">
   <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html" style="color: white">
@@ -72,6 +217,18 @@ animation: blinker 3s linear infinite;
   </a>
 </h1>
 <!-- Nicole Aniston, Riley Reid, Clara Trinity, Veronica Rodriguez, Emily Willis, Veronica Leal, Aria Lee, Elsa Jean -->
+
+<div id="search-btn-icon" class="search-btn-icon"><button onclick="handleSearch()" class="search-btn"><img class="img-size" src="https://myfav69.github.io/maintenance/search.png"/></button></div>
+
+<div id="search-div" class="search-div">
+  <div style="display: flex; margin-left: 10px; padding: 5px">
+    <div style="flex: 70%"><input id="search-input" class="search-input" type="text" value="" oninput="handleFilter()" placeholder="search"/></div>
+    <div style="flex: 30%" onclick="handleSearchClose()"><button class="search-btn"><img class="img-size" src="https://myfav69.github.io/maintenance/close.png"/></button></div>
+  </div>
+  <div id="drop-down-div" class="drop-down-div"></div>
+</div>
+
+<div id="table-container" class="table-container">
 <table style="width:100%; table-layout: fixed;">
   <tr>
     <td>
@@ -162,6 +319,7 @@ animation: blinker 3s linear infinite;
     </td>
   </tr>
 </table>
+</div>
 <h3 class="h3">
   <button class="pagination">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Angel/Angel1.html">1</a>
