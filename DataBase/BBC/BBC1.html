@@ -222,12 +222,16 @@ a {
 <script>
   function handleGoto(){
     let goto = document.getElementById("goto").value;
-    if (goto <= 2){
+    if(goto != ''){
+      if (goto <= 2){
       let link = document.createElement('a');
-     link.href = `https://myfav69.github.io/morattusingle/DataBase/BBC/BBC${goto}.html`;
-     link.click();
+      link.href = `https://myfav69.github.io/morattusingle/DataBase/BBC/BBC${goto}.html`;
+      link.click();
+      }else{
+        alert("Page Not Found!")
+      }
     }else{
-      alert("Page Not Found!")
+      alert("Enter Page no.")
     }
   }
 </script>
