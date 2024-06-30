@@ -192,6 +192,9 @@ a {
 <img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/JaxSlayher/Wizard/Cover/jax4.jpg">
 <a href="https://myfav69.github.io/morattusingle/DataBase/Stars/JaxSlayher/Wizard/Movies/jax4.html" target="_blank">Lily has a deep dark family secret</a>
 </p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/KaliRoses/Wizard/Cover/kali2.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/KaliRoses/Wizard/Movies/kali2.html" target="_blank">Horny teen daughter has quality time with daddy</a>
+</p>
 </div>
 <h3 class="h3">
   <button class="pagination">
@@ -199,6 +202,9 @@ a {
   </button>
   <button class="pagination" style="background-color: red">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Family/Family2.html">2</a>
+  </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Family/Family3.html">3</a>
   </button>
 </h3>
   <table>
@@ -219,13 +225,17 @@ a {
 <script>
   function handleGoto(){
     let goto = document.getElementById("goto").value;
-    if (goto <= 2){
+    if(goto != ''){
+      if (goto <= 3){
       let link = document.createElement('a');
-     link.href = `https://myfav69.github.io/morattusingle/DataBase/Family/Family${goto}.html`;
-     link.click();
+      link.href = `https://myfav69.github.io/morattusingle/DataBase/Family/Family${goto}.html`;
+      link.click();
+      }else{
+        alert("Page Not Found!")
+      }
     }else{
-      alert("Page Not Found!")
+      alert("Enter Page no.")
     }
   }
 </script>
-</html>
+  </html>
