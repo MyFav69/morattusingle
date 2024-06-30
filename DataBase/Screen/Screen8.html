@@ -186,6 +186,15 @@ a {
 <img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/BBC/Wizard/Cover/bbc2.jpg">
 <a href="https://myfav69.github.io/morattusingle/DataBase/BBC/Wizard/Movies/bbc2.html" target="_blank">Naughty babysitter takes first BBC ~Naomi Woods</a>
 </p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Bang/Wizard/Cover/bang4.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/Bang/Wizard/Movies/bang4.html" target="_blank">My Wife's Hot Friend ~Jayden Jaymes</a>
+</p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/VinaSky/Wizard/Cover/vina2.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/VinaSky/Wizard/Movies/vina2.html" target="_blank">Stepdad Training ~Vina Sky</a>
+</p>
+<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/KaliRoses/Wizard/Cover/kali2.jpg">
+<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/KaliRoses/Wizard/Movies/kali2.html" target="_blank">Horny teen daughter has quality time with daddy ~Kali Roses</a>
+</p>
 </div>
 <h3 class="h3">
   <button class="pagination">
@@ -212,6 +221,12 @@ a {
   <button class="pagination" style="background-color: red">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen8.html">8</a>
   </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen9.html">9</a>
+  </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen10.html">10</a>
+  </button>
 </h3>
   <table>
     <tr>
@@ -231,12 +246,16 @@ a {
 <script>
   function handleGoto(){
     let goto = document.getElementById("goto").value;
-    if (goto <= 8){
+    if(goto != ''){
+      if (goto <= 10){
       let link = document.createElement('a');
-     link.href = `https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${goto}.html`;
-     link.click();
+      link.href = `https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${goto}.html`;
+      link.click();
+      }else{
+        alert("Page Not Found!")
+      }
     }else{
-      alert("Page Not Found!")
+      alert("Enter Page no.")
     }
   }
 </script>
