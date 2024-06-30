@@ -203,6 +203,9 @@ a {
   <button class="pagination">
     <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Family/Family2.html">2</a>
   </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Family/Family3.html">3</a>
+  </button>
 </h3>
   <table>
     <tr>
@@ -222,12 +225,16 @@ a {
 <script>
   function handleGoto(){
     let goto = document.getElementById("goto").value;
-    if (goto <= 2){
+    if(goto != ''){
+      if (goto <= 3){
       let link = document.createElement('a');
-     link.href = `https://myfav69.github.io/morattusingle/DataBase/Family/Family${goto}.html`;
-     link.click();
+      link.href = `https://myfav69.github.io/morattusingle/DataBase/Family/Family${goto}.html`;
+      link.click();
+      }else{
+        alert("Page Not Found!")
+      }
     }else{
-      alert("Page Not Found!")
+      alert("Enter Page no.")
     }
   }
 </script>
