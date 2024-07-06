@@ -114,6 +114,59 @@ a {
 }
 </style>
 <script>
+    let tokenAuth = sessionStorage.getItem('tokenAuth');
+    let screenPageCount = sessionStorage.getItem('screenPageCount');
+    let totalPage = screenPageCount;
+
+    let GlobalMenuList = sessionStorage.getItem('GlobalMenuList');
+    let listOfMenu = JSON.parse(GlobalMenuList);
+
+    let GlobalVideoList = sessionStorage.getItem('GlobalVideoList');
+    let listOfVideo = JSON.parse(GlobalVideoList);
+ 
+    if(!tokenAuth||!GlobalMenuList||!screenPageCount||!GlobalVideoList){
+      let link = document.createElement('a');
+      link.href = `https://myfav69.github.io/freexxx/index.html`;
+      link.click();
+    }
+
+  function getVideoData() {
+
+  let videoList = listOfVideo.slice(48,56).map((details) => {
+    return (`<img width="345" height="220" src="${details.picture}">
+<a href="${details.link}" target="_blank">${details.name}</a>
+</p>`)
+  }).join('');
+  
+  document.getElementById('table-container').innerHTML = videoList
+  
+  let paginationDetails = `<button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen1.html">Start</a>
+  </button>
+  &nbsp;|&nbsp;
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen6.html">Prev.</a>
+  </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen6.html">6</a>
+  </button>
+  <button class="pagination" style="background-color: red">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen7.html">7</a>
+  </button>
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen8.html">8</a>
+  </button>...
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen8.html">Next</a>
+  </button>
+  &nbsp;|&nbsp;
+  <button class="pagination">
+    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${parseInt(totalPage)}.html">Last</a>
+  </button>`;
+  
+  document.getElementById('pagination').innerHTML = paginationDetails
+  
+  }
 
   function handleSearch() {
     document.getElementById("search-div").style.cssText = 'display: flex; flex-direction: column; position: absolute; z-index: 1; background-color: black; color: white; width: 40vw; height: 25vh; border-radius: 10px; box-shadow: 0 4px 8px black;';
@@ -127,10 +180,9 @@ a {
     document.getElementById("table-container").style.cssText = 'position: relative; z-index: 0;';
   }
   
-  function getData(filterVal) {
-    const data = [{name: "Search", profile: "https://myfav69.github.io/maintenance/search.png", link: "Search"},{name: "AdultX", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/All.jpg", link: "Screen"},{name: "Angels", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Angels.jpg", link: "Angel"},{name: "Squirt", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Squirt.jpg", link: "Water"},{name: "BBC", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/BBC.jpg", link: "BBC"},{name: "Ebony", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Ebony.jpg", link: "Cat"},{name: "Pervert", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Pervert.jpg", link: "Family"},{name: "Swap", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Swap.jpg", link: "Swap"},{name: "IncestFlix", profile: "https://myfav69.github.io/morattusingle/DataBase/Menu/Cover/Flix.jpg", link: "Flix"}];
+  function getData() {
 
-  let dropDownList = data.map((details) => {
+  let dropDownList = listOfMenu.map((details) => {
     return (`<div onclick="handleOpenProfile('${details.link}')" class="profile-btn" style="display: flex; padding: 10px;">
     <div><span class="search-label">${details.name}</span></div>
   </div>`)
@@ -140,10 +192,23 @@ a {
   
   }
   
-  window.onload = getData;
-
+    function handleGoto(){
+    let goto = document.getElementById("goto").value;
+    if(goto != ''){
+      if (goto <= parseInt(totalPage)){
+      let link = document.createElement('a');
+      link.href = `https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${goto}.html`;
+      link.click();
+      }else{
+        alert("Page Not Found!")
+      }
+    }else{
+      alert("Enter Page no.")
+    }
+  }
+  
   function handleOpenProfile(linkName) {
-    if(linkName != 'Search'){
+    if(linkName){
       let link = document.createElement('a');
       link.href = `https://myfav69.github.io/morattusingle/DataBase/${linkName}/${linkName}1.html`;
       link.click();
@@ -151,6 +216,11 @@ a {
       alert('Comming Soon..!')
     }
  }
+  
+  window.onload = function() {
+    getData();
+    getVideoData();
+  }
   
 </script>
 <body>
@@ -170,64 +240,10 @@ a {
   <div id="drop-down-div" class="drop-down-div"></div>
 </div>
 
-<div id="table-container" class="table-container">
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/CharityCrawford/Wizard/Cover/charity2.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/CharityCrawford/Wizard/Movies/charity2.html" target="_blank">Celeb look-alike in thong nikini ~Charity Crawford</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/BBC/Wizard/Cover/bbc3.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/BBC/Wizard/Movies/bbc3.html" target="_blank">Married wives love big black cocks ~Abigail Mac & August Ames</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/GiannaDior/Wizard/Cover/gianna2.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/GiannaDior/Wizard/Movies/gianna2.html" target="_blank">Cheerleaders easy A ~Gianna Dior</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Water/Wizard/Cover/water2.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Water/Wizard/Movies/water2.html" target="_blank">Prank me Once, Squirt on you ~Tiffany Watson</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Family/Wizard/Cover/inc5.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Family/Wizard/Movies/inc5.html" target="_blank">Stepsis is addicted to my Dick ~Rosalyn Sphinx</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Flix/Wizard/Cover/flix3.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Flix/Wizard/Movies/flix3.html" target="_blank">Little step sister's first love ~Hailey Little & Lily Rader</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/KylieRocket/Wizard/Cover/kylie2.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/KylieRocket/Wizard/Movies/kylie2.html" target="_blank">My new Maid ~Kylie Rocket</a>
-</p>
-<img width="345" height="220" src="https://myfav69.github.io/morattusingle/DataBase/Stars/ClaraTrinity/Wizard/Cover/clara2.jpg">
-<a href="https://myfav69.github.io/morattusingle/DataBase/Stars/ClaraTrinity/Wizard/Movies/clara2.html" target="_blank">Asian stepsis drained my cock ~Clara Trinity</a>
-</p>
-</div>
-<h3 class="h3">
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen1.html">1</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen2.html">2</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen3.html">3</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen4.html">4</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen5.html">5</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen6.html">6</a>
-  </button>
-  <button class="pagination" style="background-color: red">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen7.html">7</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen8.html">8</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen9.html">9</a>
-  </button>
-  <button class="pagination">
-    <a clasa="a" href="https://myfav69.github.io/morattusingle/DataBase/Screen/Screen10.html">10</a>
-  </button>
-</h3>
+<div id="table-container" class="table-container"></div>
+
+<h3 class="h3" id="pagination"></h3>
+
   <table>
     <tr>
       <td class="left">
@@ -243,20 +259,4 @@ a {
     </tr>
   </table>
 </body>
-<script>
-  function handleGoto(){
-    let goto = document.getElementById("goto").value;
-    if(goto != ''){
-      if (goto <= 10){
-      let link = document.createElement('a');
-      link.href = `https://myfav69.github.io/morattusingle/DataBase/Screen/Screen${goto}.html`;
-      link.click();
-      }else{
-        alert("Page Not Found!")
-      }
-    }else{
-      alert("Enter Page no.")
-    }
-  }
-</script>
 </html>
