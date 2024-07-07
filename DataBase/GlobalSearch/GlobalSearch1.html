@@ -108,7 +108,7 @@ body{
     shuffle(listOfVideo);
     let dropDownList = listOfVideo.filter((fil) => {if(filterVal == ''){
         return null
-      }else if(fil.name.toLowerCase().includes(filterVal.toLowerCase())){
+      }else if(fil.name.toLowerCase().includes(filterVal.toLowerCase()) || fil.category.toLowerCase().includes(filterVal.toLowerCase())){
         return fil
       }}).map((details) => {
     return (`<div onclick="handleVideoLink('${details.link}')" class="profile-btn" style="display: flex; width: 300px">
