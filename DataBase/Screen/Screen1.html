@@ -132,7 +132,7 @@ a {
 
   function getVideoData() {
 
-  let videoList = listOfVideo.slice(0,8).map((details) => {
+  let videoList = listOfVideo.reverse().slice(0,8).map((details) => {
     return (`<img width="345" height="220" src="${details.picture}">
 <a href="${details.link}" target="_blank">${details.name}</a>
 </p>`)
