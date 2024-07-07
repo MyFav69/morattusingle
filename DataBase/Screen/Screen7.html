@@ -132,7 +132,7 @@ a {
 
   function getVideoData() {
 
-  let videoList = listOfVideo.slice(48,56).map((details) => {
+  let videoList = listOfVideo.reverse().slice(48,56).map((details) => {
     return (`<img width="345" height="220" src="${details.picture}">
 <a href="${details.link}" target="_blank">${details.name}</a>
 </p>`)
@@ -247,7 +247,7 @@ a {
   <table>
     <tr>
       <td class="left">
-        <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html">Menu</a>
+        <a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html"><a href="https://myfav69.github.io/morattusingle/DataBase/Menu/Menu.html">Menu</a></a>
       </td>
       <td class="center">
         <input id="goto" type="number" style="width: 30px"/>
